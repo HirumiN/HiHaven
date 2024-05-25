@@ -58,21 +58,25 @@ document.getElementById('sign-in-link').addEventListener('click', function (even
 });
 
 
-document.addEventListener('DOMContentLoaded', function () {
+function togglePlayPause() {
     const audio = document.getElementById('audio');
     const playButton = document.getElementById('playButton');
     const pauseButton = document.getElementById('pauseButton');
+
+    if (audio.paused) {
+        audio.play();
+        playButton.classList.add('hidden');
+        pauseButton.classList.remove('hidden');
+    } else {
+        audio.pause();
+        playButton.classList.remove('hidden');
+        pauseButton.classList.add('hidden');
+    }
+}
+
+function adjustVolume() {
+    const audio = document.getElementById('audio');
     const volumeSlider = document.getElementById('volumeSlider');
 
-    playButton.addEventListener('click', function () {
-        audio.play();
-    });
-
-    pauseButton.addEventListener('click', function () {
-        audio.pause();
-    });
-
-    volumeSlider.addEventListener('input', function () {
-        audio.volume = volumeSlider.value;
-    });
-});
+    audio.volume = volumeSlider.value;
+}
