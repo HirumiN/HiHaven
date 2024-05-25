@@ -3,7 +3,7 @@
     "tailwindcss": "^3.4.3"
   },
   "scripts": {
-    "dev": "npx tailwindcss -i ./src/css/input.css -o ./src/css/index.css && npx tailwindcss -i ./src/css/input.css -o ./src/css/upload.css"
+    "dev": "npx tailwindcss -i ./src/css/input.css -o ./src/css/index.css --watch"
   }
   
 }
