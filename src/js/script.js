@@ -42,3 +42,37 @@ document.getElementById('taskList').addEventListener('click', function (event) {
         label.classList.toggle('line-through');
     }
 });
+
+
+// sign in create account
+document.getElementById('create-account-link').addEventListener('click', function (event) {
+    event.preventDefault();
+    document.getElementById('sign-in-form').classList.add('hidden');
+    document.getElementById('create-account-form').classList.remove('hidden');
+});
+
+document.getElementById('sign-in-link').addEventListener('click', function (event) {
+    event.preventDefault();
+    document.getElementById('create-account-form').classList.add('hidden');
+    document.getElementById('sign-in-form').classList.remove('hidden');
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const audio = document.getElementById('audio');
+    const playButton = document.getElementById('playButton');
+    const pauseButton = document.getElementById('pauseButton');
+    const volumeSlider = document.getElementById('volumeSlider');
+
+    playButton.addEventListener('click', function () {
+        audio.play();
+    });
+
+    pauseButton.addEventListener('click', function () {
+        audio.pause();
+    });
+
+    volumeSlider.addEventListener('input', function () {
+        audio.volume = volumeSlider.value;
+    });
+});
